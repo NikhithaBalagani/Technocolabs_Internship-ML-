@@ -3,40 +3,12 @@ import pickle
 import numpy as np
 
 
-# In[12]:
-
-
 model=pickle.load(open('model.pk1','rb'))
-
-
-# In[20]:
-
 
 def predict_parkinsons(Fo_Hz,Fhi_Hz,Flo_Hz,Jitter_p,Jitter_Abs,RAP,PPQ,DDP,Shimmer,Shimmer_dB,APQ3,APQ5,APQ,DDA,NHR,HNR,RPDE,DFA,spread1,spread2,D2,PPE):
         input=np.array([[Fo_Hz,Fhi_Hz,Flo_Hz,Jitter_p,Jitter_Abs,RAP,PPQ,DDP,Shimmer,Shimmer_dB,APQ3,APQ5,APQ,DDA,NHR,HNR,RPDE,DFA,spread1,spread2,D2,PPE]]).astype(np.float64)
         prediction=model.predict(input)
         return prediction
-
-
-# In[ ]:
-
-
-
-
-
-# In[17]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[22]:
 
 
 def main():
